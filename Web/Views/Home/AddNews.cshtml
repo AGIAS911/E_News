@@ -1,0 +1,48 @@
+﻿<form method="post" asp-action="AddNewsRequest" asp-controller="Home">
+
+    <input type="hidden" name="AuthorId"  value="@ViewBag.ID"/>
+    <!-- Title -->
+    <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input type="text" class="form-control" id="Title" name="Title" required>
+    </div>
+
+    <!-- Content -->
+    <div class="mb-3">
+        <label for="Content" class="form-label">Content</label>
+        <input type="text" class="form-control" id="Content" name="Content" required maxlength="500">
+    </div>
+
+    <!-- Author Name -->
+    <div class="mb-3">
+        <label for="AuthorName" class="form-label">Author Name</label>
+        <input type="text" class="form-control" id="AuthorName" disabled value="@ViewBag.Name">
+    </div>
+
+    <!-- Category (red circular radios) -->
+    <div class="mb-3">
+        <label class="form-label">Category</label>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="CategoryId" id="sport" value="-3" required checked>
+            <label class="form-check-label" for="sport">Sport</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="CategoryId" id="health" value="-2">
+            <label class="form-check-label" for="health">Health</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="CategoryId" id="technology" value="-1">
+            <label class="form-check-label" for="technology">Technology</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="CategoryId" id="Business" value="-4">
+            <label class="form-check-label" for="education">Business</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="CategoryId" id="entertainment" value="-5">
+            <label class="form-check-label" for="entertainment">Entertainment</label>
+        </div>
+    </div>  
+
+    <button type="submit" class="btn btn-primary">Add News</button>
+</form>
